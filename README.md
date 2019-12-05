@@ -1,14 +1,14 @@
 # Flexbox30
 
-Learn Flexbox in 30 days with 30 code tidbits ✨
+30 天 30 个小知识点，学会 Flexbox 布局 ✨
 
 <img src="flexbox30-cover.png" alt="Flexbox Cover" width="350">
 
-## Table of Contents
+## 目录
 
-1. [Introduction](#flexbox-intro)
-1. [Flex Container & Flex Items](#flex-container-and-flex-items)
-1. [Immediate Child Only](#immediate-child-only)
+1. [介绍](#flexbox-intro)
+1. [Flex 容器 & Flex 项目](#flex-container-and-flex-items)
+1. [直接子元素](#immediate-child-only)
 1. [Flexbox Axes](#flexbox-axes)
 1. [Flexbox Module](#flexbox-module)
 1. [Parent Properties](#parent-properties)
@@ -43,39 +43,39 @@ Learn Flexbox in 30 days with 30 code tidbits ✨
 1. [Contribution](#contribution)
 1. [License](#license)
 
-## Flexbox Core Concepts
+## Flexbox 核心概念
 
 <a id="flexbox-intro"></a>
 
-### [Day 1: Introduction](#flexbox-intro)
+### [第 1 天: 介绍](#flexbox-intro)
 
-Before Flexbox, we were mainly using floats for layout. And for those CSS developers, we all know the frustrations and limitations of the old way -- especially the ability to vertically center inside a parent. Ugh, that was so annoying! Not anymore! Flexbox for the win!
+在 Flexbox 出现之前，我们主要使用浮动布局。对早期的 CSS 开发者来说，使用这种老旧方式带来的布局挫折和限制都心照不宣——特别是碰到在父元素中实现垂直居中的功能时。哎呀，烦死了！不过 Flexbox 的出现，让烦恼不再来！
 
 <p><img src="code-tidbits/1-flexbox-intro.png" alt="Flexbox Introduction" width="500"></p>
 
 <a id="flex-container-and-flex-items"></a>
 
-### [Day 2: Flex Container & Flex Items](#flex-container-and-flex-items)
+### [第 2 天: Flex 容器 & Flex 项目](#flex-container-and-flex-items)
 
-In order to get Flexbox to work, you need to set up the Parent-Child relationship. The parent is the flex container, and everything within it is the children or flex items.
+在开始学习 Flexbox 之前，我们先来搞清楚这个布局里会涉及到一种父子关系。我们称父元素为 Flex 容器，称子元素为 Flex 项目。
 
 <p><img src="code-tidbits/2-flex-container-and-flex-items.png" alt="Flex Container & Flex Items" width="500"></p>
 
 <a id="immediate-child-only"></a>
 
-### [Day 3: Immediate Child Only](#immediate-child-only)
+### [第 3 天: 直接子元素](#immediate-child-only)
 
-One VERY important thing I want to point out is that the flex container only wraps around its immediate children. The flex container doesn't wrap beyond one layer deep. Only the immediate children. So there is NOT a grandchildren or grand-grandchildren relationship. Only Parent ↔️ Immediate Children!
+有一件非常重要的、需要指出的事情是，Flex 项目是对 Flex 容器直接子元素的叫法。即 Flex 容器的作用范围是它的直接子元素，就这一层，不会更深了。也就是说 Flexbox 布局，反应地是父元素↔️直接子元素的关系！
 
-Of course, you can establish a Flexbox as long as there is a parent-child relationship. So a child can also be the flex container to its children. But it will be a separate flex container. And it doesn't carry over the grandparent flex properties.
+当然，在所有具备父子关系的上下文环境里，你都可能创建 Flexbox 布局。当然 Flex 项目本身也可以是它孩子的 Flex 容器。注意，这里提到的两个容器不会互相干扰，不会有内部 Flex 容器覆盖外部 Flex 容器属性的事情发生。
 
-This is probably one of the most important concepts that helped me understand how Flexbox works. And knowing this will help solve a lot of those "hey, why isn't this working" moments 😅
+这一个也许是帮助我理解 Flexbox 作用原理的最重要的一个概念了。知道了这个概念，帮我避免了好多“哎，为什么设置了就没用呢”的时刻发生 😅
 
 <p><img src="code-tidbits/3-immediate-child-only.png" alt="Immediate Child Only" width="500"></p>
 
 <a id="flexbox-axes"></a>
 
-### [Day 4: Flexbox Axes](#flexbox-axes)
+### [第四天: Flexbox 轴](#flexbox-axes)
 
 Flexbox operates in a 2 axes system: a main and a cross axis. The main axis is your defining direction of how your flex items are placed in the flex container. Determining the cross axis is very simple, it's in the direction that's perpendicular to your main axis.
 
