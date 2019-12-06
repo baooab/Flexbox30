@@ -24,23 +24,23 @@
 1. [baseline](#baseline)
 1. [align-items [column]](#align-items-column)
 1. [align-content](#align-content)
-1. [Child Properties](#child-properties)
+1. [Flex 项目属性](#child-properties)
 1. [order](#order)
 1. [flex-grow](#flex-grow)
-1. [flex-grow calculation](#flex-grow-calculation)
+1. [flex-grow 的计算方法](#flex-grow-calculation)
 1. [flex-shrink](#flex-shrink)
-1. [flex-shrink calculation](#flex-shrink-calculation)
+1. [flex-shrink 的计算方法](#flex-shrink-calculation)
 1. [flex-basis](#flex-basis)
 1. [flex-basis vs widths](#flex-basis-vs-widths)
 1. [flex](#flex)
 1. [align-self](#align-self)
-1. [Flexbox Properties](#flexbox-properties)
+1. [Flexbox 属性](#flexbox-properties)
 1. [Flexbox Cheatsheet](#flexbox-cheatsheet)
-1. [Aligning with Auto Margins](#bonus-aligning-with-auto-margins)
-1. [Resources](#resources)
-1. [Say Hello](#say-hello)
-1. [Download & Share](#download-and-share)
-1. [Contribution](#contribution)
+1. [使用 auto margin 对齐](#bonus-aligning-with-auto-margins)
+1. [资源](#resources)
+1. [你好呀](#say-hello)
+1. [下载 & 分享](#download-and-share)
+1. [贡献](#contribution)
 1. [License](#license)
 
 ## Flexbox 核心概念
@@ -107,11 +107,11 @@ Flexbox 布局会涉及到 2 根轴：主轴和交叉轴。主轴定义 Flex 容
 
 <a id="display"></a>
 
-### [Day 7: Display](#display)
+### [第 7 天: Display](#display)
 
-To start this Flexbox party, we need to first create our flex container. This is done by applying `flex` to the `display` property on the parent element. Bam! Now all its immediate children will become flex items 🎊
+首先，创建咱们的 Flex 容器。我们将父元素的 `display` 属性设置为 `flex` 就可以了。嘭！现在所有的直接子元素自动成为 Flex 项目了 🎊
 
-There are 2 types of flex container: `flex` will create a *block* level flex container. And `inline-flex` will create an *inline* level flex container. More on *block* and *inline* tomorrow 😉
+一共有两种类型的 Flex 容器：`flex` 创建的是一个 *块* 级 Flex 容器。`inline-flex` 则会创建一个 *行内* 级别的 Flex 容器。更多关于 *block* 和 *inline* 的信息明天再说 😉
 
 <p><img src="code-tidbits/7-display.png" alt="Display" width="500"></p>
 
@@ -124,17 +124,19 @@ There are 2 types of flex container: `flex` will create a *block* level flex con
 
 <a id="block-vs-inline"></a>
 
-### [Day 8: block vs inline](#block-vs-inline)
+### [第 8 天: block vs inline](#block-vs-inline)
 
-Very simply explained, `block` element takes up the entire width of the container. They look like building blocks where each block is stacked on each other. Whereas `inline` element only takes up the space it needs. So they appear to be in a line, or side by side of each other.
+简单地讲，`block` 元素占据整个容器的宽度。它们看起来就像是叠在一起的积木。而行内元素只占据它所需的空间。因此它们是一行排列的，一个挨着一个。
 
 <p><img src="code-tidbits/8-block-vs-inline.png" alt="block vs inline" width="500"></p>
 
 <a id="flex-direction"></a>
 
-### [Day 9: flex-direction](#flex-direction)
+### [第 9 天: flex-direction](#flex-direction)
 
 This is the property that allows us to define our main axis. Remember I mentioned that our main axis can be horizontal or vertical. So if we want the main axis to be horizontal, that's called **row**. And if we want it to be vertical, that's called **column**. Also, remember we had a **main start** and **main end**. We simply add a `reverse` suffix to set our "main start" in the reverse direction. Pretty cool eh 👍
+
+这个属性是用来定义主轴方向的。还记
 
 <p><img src="code-tidbits/9-flex-direction.png" alt="flex-direction" width="500"></p>
 
@@ -878,42 +880,44 @@ YAY!!! You did it! You learned all the properties of Flexbox! You're a Flexbox n
 
 <a id="flexbox-cheatsheet"></a>
 
-### [Day 30: Flexbox Cheatsheet](#flexbox-cheatsheet)
+### [第 30 天: Flexbox 备忘单](#flexbox-cheatsheet)
 
 Final tidbit! Let me give you one more tidbit for the road. Memorizing all the available properties is not easy. Even after doing creating this entire tutorial, I still don't have all these properties memorized. Being a good programmer is not about how much you memorize, it's about problem solving. And that's why it's important for a programmer to continue to stay humble and learn. It's all about expanding our toolkit so when we do face a problem, we have a variety of tools that we can select from to fix it 🧰
 
-Congratulation for completing Flexbox30! I hope you learned a lot and thank you for letting my tidbits be part of your programming journey 💛
+恭喜你完成了 Flexbox30 项目！我希望你收获很多，谢谢你让我的 tidbits 成为你编程旅程的一部分 💛
 
 <p><img src="code-tidbits/30-flexbox-cheatsheet.png" alt="Flexbox Cheatsheet" width="500"></p>
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 <a id="auto-margins"></a>
 
-### [Bonus: Aligning with Auto Margins](#auto-margins)
+### [福利: 使用 auto margin 对齐](#auto-margins)
 
 Bonus content! Another way to align Flexbox child elements is to use auto margins. Although this isn't a Flexbox property, it's still important to be aware of it because it has a very interesting relationship with Flexbox. Check out my code notes on it if you're interested  👉 [Flexbox: Aligning with Auto Margins](/flexbox-aligning-with-auto-margins/README.md)
+
+
 
 <p><img src="code-tidbits/bonus-auto-margins.png" alt="Flexbox Cheatsheet" width="500"></p>
 
 <a id="resources"></a>
 
-## 📚 Resources
+## 📚 资源
 
-**Learning Flexbox**
+**学习 Flexbox**
 
-- [MDN web docs: Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-- [MDN web docs: Basic Concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+- [MDN web 文档: Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+- [MDN web 文档: Flexbox 的基本概念](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 - [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Yoksel: Flex Cheatsheet](https://yoksel.github.io/flex-cheatsheet/)
 - [JoniBologna.com: Flexbox Cheatsheet](http://jonibologna.com/flexbox-cheatsheet/)
 - [Interneting is hard: Flexbox](https://internetingishard.com/html-and-css/flexbox/)
 
-**Official Spec**
+**官方规范**
 
 - [W3C: Flexbox](https://www.w3.org/TR/css-flexbox-1/)
 
-**Community Suggestion**
+**社区建议**
 
 - [Flexbox Zombies](https://flexboxzombies.com) $
 - [Flexbox Froggy](https://flexboxfroggy.com/)
@@ -921,7 +925,7 @@ Bonus content! Another way to align Flexbox child elements is to use auto margin
 
 <a id="say-hello"></a>
 
-## 👋 Say Hello
+## 👋 你好呀
 
 > I share JS, HTML, CSS tidbits every week!
 
@@ -934,7 +938,7 @@ Official: [samanthaming.com](https://www.samanthaming.com/)
 
 <a id="download-and-share"></a>
 
-## 💖 Download & Share
+## 💖 下载 & 分享
 
 Absolutely! You are more than welcome to download and share my code tidbits. If you've gotten any value from my content and would like to help me reach more people, please do share!
 
@@ -942,7 +946,7 @@ One thing that I kindly ask is that you don't edit the images or crop my name ou
 
 <a id="contribution"></a>
 
-## 🌟 Contribution
+## 🌟 贡献
 
 Yes! Anyone is welcome to contribute to the quality of this content. Please feel free to submit a PR request for typo fixes, spelling corrections, explanation improvements, etc. If you want to help translate the tutorial, that's even cooler! I'm hoping to at least create a Chinese version soon 👩🏻‍🏫
 
