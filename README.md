@@ -36,7 +36,7 @@
 1. [align-self](#align-self)
 1. [Flexbox 属性](#flexbox-properties)
 1. [Flexbox Cheatsheet](#flexbox-cheatsheet)
-1. [使用 auto margin 对齐](#bonus-aligning-with-auto-margins)
+1. [使用 auto margin 对齐](#auto-margins)
 1. [资源](#resources)
 1. [你好呀](#say-hello)
 1. [下载 & 分享](#download-and-share)
