@@ -9,9 +9,9 @@
 1. [介绍](#flexbox-intro)
 1. [Flex 容器 & Flex 项目](#flex-container-and-flex-items)
 1. [直接子元素](#immediate-child-only)
-1. [Flexbox Axes](#flexbox-axes)
-1. [Flexbox Module](#flexbox-module)
-1. [Parent Properties](#parent-properties)
+1. [Flexbox 轴](#flexbox-axes)
+1. [Flexbox 模块](#flexbox-module)
+1. [Flex 容器属性](#parent-properties)
 1. [Display](#display)
 1. [block vs inline](#block-vs-inline)
 1. [flex-direction](#flex-direction)
@@ -75,33 +75,33 @@
 
 <a id="flexbox-axes"></a>
 
-### [第四天: Flexbox 轴](#flexbox-axes)
+### [第 4 天: Flexbox 轴](#flexbox-axes)
 
-Flexbox operates in a 2 axes system: a main and a cross axis. The main axis is your defining direction of how your flex items are placed in the flex container. Determining the cross axis is very simple, it's in the direction that's perpendicular to your main axis.
+Flexbox 布局会涉及到 2 根轴：主轴和交叉轴。主轴定义 Flex 容器中 Flex 项目的排版方向。交叉轴就比较简单了，它与主轴垂直。 
 
-Remember in math class, we were taught **x** and **y** axis. Well, throw that out. Because the main axis can be horizontal or vertical. The **x** axis is not always the main axis. This was a mistake I made, so hopefully you won’t make the same incorrect assumption as I did 😅
+还记得数学课里学到的 **x** 轴 **y** 轴吧，不过跟这里可不一样。因为主轴方向可能是水平的，也可能是垂直的。**x** 轴上并不总是主轴。这是我犯过的一个错误，期望你不要重蹈覆辙啊 😅
 
 <p><img src="code-tidbits/4-flexbox-axes.png" alt="Flexbox Axes" width="500"></p>
 
 <a id="flexbox-module"></a>
 
-### [Day 5: Flexbox Module](#flexbox-module)
+### [第 5 天: Flexbox 模块](#flexbox-module)
 
-Let's zoom in on one of the layouts and check out the anatomy of our Flexbox. On each axis, there is a start and an end.  If it's on the main axis, the starting position is called **main start** and if the ending position is called **main end**. The same concept applies to the cross axis. Knowing your start and end is important because you can control where your flex items are placed.
+现在再深入探讨下轴的知识。每个轴都有起始端和结束端。以主轴为例，起始位置叫“main start”，结束位置叫“main end”。交叉轴的“cross start”、“cross end”的概念于此类似。知道了轴的起始端和结束端概念，对后面学会如何控制 Flex 项目的排版很重要。
 
-And this concludes our Flexbox Fundamentals.
+以上这些，就是 Flexbox 布局的基本知识了。
 
 <p><img src="code-tidbits/5-flexbox-module.png" alt="Flexbox Module" width="500"></p>
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 回到顶部](#table-of-contents)**
 
-## Parent Properties
+## 容器属性
 
 <a id="parent-properties"></a>
 
-### [Day 6: Parent Properties](#parent-properties)
+### [第 6 天: 容器属性](#parent-properties)
 
-Now you know Flex operates in a Parent-Child relationship. So we have 2 entities involved to get this tango started. And each entity will have its own set of unique CSS properties that can be applied to them. That's why it's important that you know which element is the parent and which element(s) is the child. Let's get started with the parent properties 🤰
+现在我们知道了 Flexbox 布局是在父子关系中运行的。在这个系统里会涉及到两个实体。每个实体都单独拥有一套自己的 CSS 属性集合。这就是之前要区分 Flex 容器和 Flex 项目原因所在，因为它们各自都有不同的属性可供设置。下面我们从 Flex 容器属性开始讲起 🤰
 
 <p><img src="code-tidbits/6-parent-properties.png" alt="Parent Properties" width="500"></p>
 
