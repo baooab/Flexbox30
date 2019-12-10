@@ -136,9 +136,7 @@ Flexbox 布局会涉及到 2 根轴：主轴和交叉轴。主轴定义 Flex 容
 
 ### [第 9 天: flex-direction](#flex-direction)
 
-This is the property that allows us to define our main axis. Remember I mentioned that our main axis can be horizontal or vertical. So if we want the main axis to be horizontal, that's called **row**. And if we want it to be vertical, that's called **column**. Also, remember we had a **main start** and **main end**. We simply add a `reverse` suffix to set our "main start" in the reverse direction. Pretty cool eh 👍
-
-这个属性是用来定义主轴方向的。还记
+这个属性是用来定义主轴方向的。还记得我们讲过，主轴可以是水平也可以是垂直的吧。水平的主轴叫 **row**，垂直的主轴叫 **column**。而且，还有 **main start** 和 **main end** 的概念。我们简单添加一个 `reverse` 前缀就能将“main start”设置到反向位置。很酷吧 👍
 
 <p><img src="code-tidbits/9-flex-direction.png" alt="flex-direction" width="500"></p>
 
@@ -153,11 +151,11 @@ This is the property that allows us to define our main axis. Remember I mentione
 
 <a id="flex-wrap"></a>
 
-### [Day 10: flex-wrap](#flex-wrap)
+### [第 10 天: flex-wrap](#flex-wrap)
 
-By default, flex items will try to shrink itself to fit onto one line, in other words, `no wrap`. However if you want the flex items to maintain its size and have the overflow spread on multiple lines in the containers, then you can turn on `wrap`.
+Flex 项目默认会缩减自己的尺寸以便适应在一行内显示。也就是说，默认是 `nowrap` 的。然而，如果你需要保留它的尺寸，并且允许在容器内多行显示的话，那么就要考虑使用 `wrap` 了。
 
-This property is what will allow flex items in your container to occupy more than one line.
+使用这个属性值后，允许 Flex 项目在一行显示不够的情况下，占据多行显示。
 
 <p><img src="code-tidbits/10-flex-wrap.png" alt="flex-wrap" width="500"></p>
 
@@ -171,11 +169,11 @@ This property is what will allow flex items in your container to occupy more tha
 
 <a id="flex-flow"></a>
 
-### [Day 11: flex-flow](#flex-flow)
+### [第 11 天: flex-flow](#flex-flow)
 
-So we've learned `flex-direction` and `flex-wrap`. If you understand those 2, you'll get `flex-flow`! Because it's just a shorthand for these two properties 👏
+其实这个属性你已经学过了。为什么这么说呢？因为它就是个简写属性，是 `flex-direction` 和 `flex-wrap` 两个属性的简写形式 👏
 
-You can set both properties at the same time. Or you can just pass one of them. The default value is `row nowrap`. So if you just set one value, the property that you didn't set will just take on the default value.
+你可以用这个属性同时设置两个属性，或者只设置其中之一。默认值为 `row nowrap`。如果只设置了其中一个属性，那么另一个则保持默认设置。
 
 <p><img src="code-tidbits/11-flex-flow.png" alt="flex-flow" width="500"></p>
 
