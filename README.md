@@ -188,11 +188,11 @@ Flex 项目默认会缩减自己的尺寸以便适应在一行内显示。也就
 
 <a id="justify-content-row"></a>
 
-### [Day 12: justify-content [row]](#justify-content-row)
+### [第 12 天: justify-content [row]](#justify-content-row)
 
-Here comes the fun part. This is the property that sets alignment along the main axis. In this example, the main axis lies horizontally. In other words, the flex-direction is set to `row`.
+接下来要讲得这块就比较有趣了。`justify-content` 用来控制 Flex 项目在主轴上的对齐方式。本例中，主轴是水平的，即 `flex-direction` 置为 `row`。
 
-This is probably my most used parent property. You just choose the layout you like and BAM Flexbox automatically does it for you. And it's absolutely responsive. As your grow or shrink the window width, Flexbox will do the behind-the-scene calculation and ensure that your chosen layout is maintained. It's like one of those kitchen appliances where "you set it and forget it" 🍗
+这可能是我最常使用的容器属性了。你只要选择一个你喜欢的布局方式，Flexbox 会自动为你安排好。完全是响应式的。随着你拉伸、收缩窗口的宽度，Flexbox 会进行后台计算，保证你指定的布局一直有效。有点像是厨房里的电器——“设置好后，就不用管了” 🍗
 
 <p><img src="code-tidbits/12-justify-content-row.png" alt="justify-content row" width="500"></p>
 
@@ -209,9 +209,9 @@ This is probably my most used parent property. You just choose the layout you li
 
 <a id="justify-content-column"></a>
 
-### [Day 13: justify-content [column]](#justify-content-column)
+### [第 13 天: justify-content [column]](#justify-content-column)
 
-The main axis can also lie vertically. In that case, flex-direction is set to `column`. Here's how the flex items will be aligned in that instance.
+主轴方向也可以是垂直的。这种情况下，`flex-direction` 属性值为 `column`。下图中反应了此种情况下 Flex 项目的对齐方式。
 
 <p><img src="code-tidbits/14-justify-content-column.png" alt="justify-content column" width="500"></p>
 
@@ -219,7 +219,7 @@ The main axis can also lie vertically. In that case, flex-direction is set to `c
 .parent {
   flex-direction: column;
   
-  justify-content: flex-start /* default */
+  justify-content: flex-start /* 默认 */
                 or flex-end
                 or center
                 or space-around
@@ -230,17 +230,17 @@ The main axis can also lie vertically. In that case, flex-direction is set to `c
 
 <a id="space-around-vs-space-evenly"></a>
 
-### [Day 14: space-around vs space-evenly](#space-around-vs-space-evenly)
+### [第 14 天: space-around vs space-evenly](#space-around-vs-space-evenly)
 
-You might not notice the subtle difference between space-around and space-evenly. So let's talk about it. In `space-evenly`, the empty space in between the flex items is always equal. However, in `space-around`, only the inner items will have equal spacing in between each other. The first and last item will only be allocated half the spacing. Giving the visual appearance of it being more spread out. One may say these folks like to live life on the edge 😂
+你可能不太容易区分 `space-around` 和 `space-evenly` 之间的细微差别。这里说下。对 `space-evenly` 来说，每个 Flex 项目两边的空间间隔都是一样的。而对于 `space-around`，项目与容器边缘的间隔是是项目间间隔的一半。后者给人的感受是，项目分布更加离散，好像它们更喜欢边缘生活一样 😂
 
 <p><img src="code-tidbits/13-space-around-vs-space-evenly.png" alt="space-around vs space-evenly" width="500"></p>
 
 <a id="align-items-row"></a>
 
-### [Day 15: align-items [row]](#align-items-row)
+### [第 15 天: align-items [row]](#align-items-row)
 
-So justify-content controls how items are laid out on the main axis. What about their layout in the cross axis? Don't worry, that's where `align-items` come into play. Remember the cross axis is always perpendicular to the main axis. So if the main axis is sitting horizontally, where flex-direction is `row`. Then , the cross axis is sitting vertically. Aren't you glad we spend almost a week on the fundamentals, that knowledge is all being applied now 🤓
+justify-content 控制的是项目在主轴上的布局方式。那么交叉轴上的布局，由谁控制呢？别担心，有 `align-items` 来负责。还记得吧，交叉轴方向始终是与主轴方向垂直的。就是说，如果主轴是水平的，即 flex-direction 为 row 的情况下，交叉轴则是垂直的。之前你有没有因为我们花了将近一个星期的时间来学习基础知识，而不高兴？好了，基础里讲的现在都派上用场了 🤓
 
 <p><img src="code-tidbits/15-align-items-row.png" alt="align-items row" width="500"></p>
 
@@ -256,17 +256,17 @@ So justify-content controls how items are laid out on the main axis. What about 
 
 <a id="baseline"></a>
 
-### [Day 16: baseline](#baseline)
+### [第 16 天: baseline](#baseline)
 
-The baseline value is a bit tricky. So let's make sure we understand what that is. Baseline has to do with typography or text. It is the imaginary line where the text sits. If you have the same font size, you really don't visually see a difference. However when you have different font sizes, then the text seems all over the place because the baseline is off. The way to ensure a uniform baseline where all the different sizes of text can rest on is to use the `baseline` value 👍
+`baseline` 这个值得需要解释一下。它与文本排版有关。是一个存在于文字之上的一个假想线。如果是一行相同字体大小的文字排在一起，你真的看不出有什么区别；如果需要将不同字体大小的文字排列在一起，如果不设置为 `baseline` （基于基线）显示，则可能出现文字显示位置上的混乱。为了确保所有不同大小的文本都位于一个统一基线的方法，就是使用 `baseline` 👍
 
 <p><img src="code-tidbits/16-baseline.png" alt="baseline" width="500"></p>
 
 <a id="align-items-column"></a>
 
-### [Day 17: align-items [column]](#align-items-column)
+### [第 17 天: align-items [column]](#align-items-column)
 
-Now let's take a look at how our flex items are aligned if the cross axis is sitting horizontally. In other words, flex-direction is `column`.
+现在我们来看下如果交叉轴是水平的话， Flex 项目的对齐方式。也就是在 flex-direction 为 `column` 的情况。
 
 <p><img src="code-tidbits/17-align-items-column.png" alt="align-items column" width="500"></p>
 
@@ -284,7 +284,7 @@ Now let's take a look at how our flex items are aligned if the cross axis is sit
 
 <a id="align-content"></a>
 
-### [Day 18: align-content](#align-content)
+### [第 18 天: align-content](#align-content)
 
 Remember we had `flex-wrap` where we allow flex items to wrap on separate lines. Well, with `align-content` we can control how those row of items are aligned on the cross axis. Since this is only for wrapped items, this property won't have any effect if you only have a singular line of flex items.
 
@@ -301,7 +301,7 @@ Remember we had `flex-wrap` where we allow flex items to wrap on separate lines.
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 回到顶部](#table-of-contents)**
 
 ## Child Properties
 
