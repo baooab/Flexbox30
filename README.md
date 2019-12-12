@@ -332,11 +332,11 @@ justify-content 控制的是项目在主轴上的布局方式。那么交叉轴�
 
 ### [第 21 天: flex-grow](#flex-grow)
 
-我一开始提到过 Flexbox 对于响应式设计是非常友好的，这是它的亮点。`flex-grow` 属性允许 Flex 项目在必要时增长。因此，如果容器中有多余空间，我们可以告诉一个特定的项目基于比例来填补它。真是太好了！当我刚学 CSS 的时候，记得一切都是静态的。有了这个属性，好像它就有了自己的大脑，能根据容器大小来调整自己的尺寸。我不需要监听尺寸变化了。因为项目自己会作出相应调整。对我来说这真是次洗礼 🤯
+我一开始提到过 Flexbox 对于响应式设计是非常友好的，这是它的亮点。`flex-grow` 属性允许 Flex 项目在必要时增长。因此，如果容器中有剩余空间，我们可以告诉某个特定的项目基于某种比例来填充它。真是太好了！当我刚学 CSS 的时候，记得一切都是静态的。有了这个属性，好像它就有了自己的大脑，能根据容器大小来调整自己的尺寸。我不需要监听尺寸变化了。因为项目自己会作出相应调整。对我来说这真是次洗礼 🤯
 
 <p><img src="code-tidbits/21-flex-grow.png" alt="flex-grow" width="500"></p>
 
-```css
+```css    
 .child {
   flex-grow: 0 /* default */
           or <number>
@@ -347,16 +347,18 @@ justify-content 控制的是项目在主轴上的布局方式。那么交叉轴�
 
 ### [第 22 天: flex-grow 的计算方法](#flex-grow-calculation)
 
-Being able to grow and fill the free space is pretty cool. Because we don't set the final width of our flex item, the size it grows to always seem so random to me. So let's look at the math. Honestly you don't need to know this to understand Flexbox. The browser takes care of this automatically for you. But knowing what's behind this sorcery might demystify this process and help you understand it better. It's like once you know the trick to the magic, you're no longer tricked by the magic 😉
+自动增长填充剩余空间的功能非常酷。因为我们没有设置 Flex 项目的最终宽度，它的尺寸对我来说是有各种可能的。接下来我们来看看 flex-grow 的计算方法，当然讲这个的目的是为了搞懂魔法背后的秘密，帮助你更好地理解内部的执行机制。当然整个过程是由浏览器自动负责的，但对咱们来说不是什么魔法 😉
 
 <p><img src="code-tidbits/22-flex-grow-calculation.png" alt="flex-grow calculation" width="500"></p>
 
 <details>
-  <summary><b>Expand to see the calculation</b></summary><br>
+  <summary><b>展开查看计算详情</b></summary><br>
 
 I know it can be quite overwhelming to see all numbers crammed into a tidbit. So let's walk through the calculation 👍
 
-Here's the `HTML` and `CSS` we're working with:
+我知道，看到所有的数字都塞进一个小玩意儿里，可能会让人不知所措。因此，我们下面做下解释 👍
+
+下面是我们用到的 `HTML` 和 `CSS` 代码：
 
 _HTML_
 
@@ -390,89 +392,89 @@ _CSS_
 
 <br>
 
-**Step 1: Breaking down the variables**
+**第 1 步: 分解变量**
 
-Here's the formula:
+这里是公式:
 
 ```code
-new width = ( (flex grow / total flex grow) x free space) + width
+new width = ( (flex grow / total flex grow) x 剩余空间) + width
 ```
 
-Let's extract the variables required in the formula to this handy table we can fill in as we go:
+我们将公式里涉及到的变量填在下面的表格中：
 
-Variables  |     |
+变量  |     |
 ---        | --- |
-flex grow  | *provided from css*
-total flex | *need to calculate*
-free space | *need to calculate*
-width      | *provided from css*
+flex grow  | *css 中设置*
+total flex |  *需要计算*
+剩余空间     | *需要计算*
+width      | *css 中设置*
 
 <br>
 
-**Step 2: Fill in what we know**
+**第 2 步: 填入已知信息**
 
-From the `CSS` value, we can conclude the following:
+从 `CSS` 样式中，我们能得到：
 
-- Each child element has a width `100`
-- The parent element (container) has a width of `700`
-- The child has a `flex-grow` of `1`, `0`, `3`
+- 每个子元素的宽度 width 是 `100`
+- 父元素（容器）的宽度是 `700`
+- 子元素的 `flex-grow` 属性值依次为 `1`、`0` 和 `3`
 
-Let's update our chart with this information:
+下面更新下表格信息：
 
 <i></i>    |  Green | Yellow | Blue
 ---        | ---    | ---    | --- |
 flex grow  | 1      | 0      | 3
 total flex |
-free space |
+剩余空间 |
 width      | 100    | 100    | 100
 
 <br>
 
-**Step 3: Calculate "free space"**
+**第 3 步: 就散 "剩余空间"**
 
-This is the formula:
+这是公式：
 
 ```code
-free space = parent width - total children widths
+剩余空间 = 父元素宽度 - 所有子元素宽度
 ```
 
-Remember what we know:
+我们已知：
 
-- Each child element has a width `100`
-- The parent element (container) has a width of `700`
+- 每个子元素的宽度 width 是 `100`
+- 父元素（容器）的宽度是 `700`
 
 Great, we can use that information to calculate "total children widths":
 
 ```code
-total children widths = green + yellow + blue
-                      = 100   + 100    + 100
+所有子元素宽度 = green + yellow + blue
+             = 100   + 100    + 100
 
 => 300
 ```
 
-Now we can calculate our "free space":
+现在能够计算咱们的“剩余空间”了：
 
 ```code
-free space = parent width - total children widths
-           = 700          -  300
+剩余空间 = 父元素宽度 - 所有子元素宽度
+        = 700      -  300
 
 => 400
 ```
 
-Let's update our chart and add these additional information:
+现在更新表格，添加如下这些额外信息：
 
 <i></i>    |  Green | Yellow | Blue | Total
 ---        | ---    | ---    | ---  | --- |
 flex grow  | 1      | 0      | 3
 total flex |
-free space | -      | -      | -    | **400**
+剩余空间     | -      | -      | -    | **400**
 width      | 100    | 100    | 100
 
 <br>
 
-**Step 4: Calculate "total flex grow"**
+**第 4 步: 计算 "total flex grow"**
 
-This is an easy one, we simply add up our total `flex-grow`:
+这就比较简单啦，简单把设置的所有 `flex-grow` 属性值相加即可：
 
 ```code
 total flex grow = green + yellow + blue
@@ -481,7 +483,8 @@ total flex grow = green + yellow + blue
 => 4
 ```
 
-Fill in our chart and Voilà! We have all the information we need for the final calculation 👍
+填写我们的表格。瞧！我们有了计算最终尺寸所需的全部信息 👍
+
 
 <i></i>     |  Green | Yellow | Blue | Total
 ---         | ---    | ---    | ---  | --- |
