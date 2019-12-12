@@ -286,7 +286,7 @@ justify-content 控制的是项目在主轴上的布局方式。那么交叉轴�
 
 ### [第 18 天: align-content](#align-content)
 
-Remember we had `flex-wrap` where we allow flex items to wrap on separate lines. Well, with `align-content` we can control how those row of items are aligned on the cross axis. Since this is only for wrapped items, this property won't have any effect if you only have a singular line of flex items.
+还记得 `flex-wrap` 属性吧，允许多出来的 Flex 项目折行显示。而 `align-content` 属性就是控制这些 Flex 项目在交叉轴上的对齐方式的。此属性仅对折行项目生效，如果 Flex 项目仅有一行的话，设置此属性不会产生任何效果。
 
 <p><img src="code-tidbits/18-align-content.png" alt="align-content" width="500"></p>
 
@@ -303,21 +303,21 @@ Remember we had `flex-wrap` where we allow flex items to wrap on separate lines.
 
 **[⬆ 回到顶部](#table-of-contents)**
 
-## Child Properties
+## 项目属性
 
 <a id="child-properties"></a>
 
-### [Day 19: Child Properties](#child-properties)
+### [第 19 天: 项目属性](#child-properties)
 
-Yay, you did it! We made it through the parent properties. Up next, let dig into the child properties. Take a breather today, tomorrow we go full speed again 🏎
+是的，我们已经讲完了应用在容器上的所有属性。现在我们开始讲述项目属性了。今天休息一下，明天我们再全速前进 🏎
 
 <p><img src="code-tidbits/19-child-properties.png" alt="Child Properties" width="500"></p>
 
 <a id="order"></a>
 
-### [Day 20: order](#order)
+### [第 20 天: order](#order)
 
-By default, flex items are displayed in the same order they appear in your code. But what if you want to change that? No problem! Use the `order` property to change the ordering of your items 🔢
+默认，Flex 项目的显示顺序与代码结构是一致的。但如何我们想要调整项目显示顺序的话，可以吗？当然，`order` 属性就是用来修改项目显示顺序的 🔢
 
 <p><img src="code-tidbits/20-order.png" alt="order" width="500"></p>
 
@@ -330,9 +330,9 @@ By default, flex items are displayed in the same order they appear in your code.
 
 <a id="flex-grow"></a>
 
-### [Day 21: flex-grow](#flex-grow)
+### [第 21 天: flex-grow](#flex-grow)
 
-I mentioned in the beginning that Flexbox is great for responsive design. This is where it shines. The `flex-grow` property allows our flex item to grow if necessary. So if there is extra free space in my container, I can tell a particular item to fill it up based on some proportion. That's pretty nuts! When I was learning CSS, I remember everything is pretty static. Now with this property, it's like it has its own brain and it will adjust its size depending on the container. That's so great. I don't have to monitor the size. It will adjust accordingly. This was a quite the mind blow for me 🤯
+我一开始提到过 Flexbox 对于响应式设计是非常友好的，这是它的亮点。`flex-grow` 属性允许 Flex 项目在必要时增长。因此，如果容器中有多余空间，我们可以告诉一个特定的项目基于比例来填补它。真是太好了！当我刚学 CSS 的时候，记得一切都是静态的。有了这个属性，好像它就有了自己的大脑，能根据容器大小来调整自己的尺寸。我不需要监听尺寸变化了。因为项目自己会作出相应调整。对我来说这真是次洗礼 🤯
 
 <p><img src="code-tidbits/21-flex-grow.png" alt="flex-grow" width="500"></p>
 
@@ -345,7 +345,7 @@ I mentioned in the beginning that Flexbox is great for responsive design. This i
 
 <a id="flex-grow-calculation"></a>
 
-### [Day 22: flex-grow calculation](#flex-grow-calculation)
+### [第 22 天: flex-grow 的计算方法](#flex-grow-calculation)
 
 Being able to grow and fill the free space is pretty cool. Because we don't set the final width of our flex item, the size it grows to always seem so random to me. So let's look at the math. Honestly you don't need to know this to understand Flexbox. The browser takes care of this automatically for you. But knowing what's behind this sorcery might demystify this process and help you understand it better. It's like once you know the trick to the magic, you're no longer tricked by the magic 😉
 
