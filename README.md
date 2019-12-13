@@ -494,12 +494,12 @@ width       | 100    | 100    | 100  |
 
 <br>
 
-**Final step: Calculate "new width"**
+**最后一步：计算 "new width"**
 
-Remember the formula:
+还记得公式吧：
 
 ```code
-new width = ( (flex grow / total flex grow) x free space) + width
+new width = ( (flex grow / total flex grow) x 剩余空间 + width
 ```
 
 _a. Green_
@@ -526,13 +526,13 @@ new width = ( (3/4 * 400) ) + 100
 => 400
 ```
 
-Done! We have successfully calculated the new width 🥳
+完成！我们成功计算出了新的宽度 🥳
 
 <i></i>       |  Green   | Yellow  | Blue    | Total
 ---           | ---      | ---     | ---     | --- |
 width         | 200      | 100     | 400  
 flex grow     | 1        | 0       | 3       | 4
-free space    |          |         |         | 400
+剩余空间    |          |         |         | 400
 **new width** | **200**  | **100** | **400**  
 
 <hr>
@@ -541,9 +541,9 @@ free space    |          |         |         | 400
 
 <a id="flex-shrink"></a>
 
-### [Day 23: flex-shrink](#flex-shrink)
+### [第 23 天: flex-shrink](#flex-shrink)
 
-So `flex-grow` will expand to fill the extra space if there are any. The opposite of that is `flex-shrink`. What happens when you run out of space. This is the property that controls how much your flex items will shrink to fit. Note the larger the number, the more it will shrink 👍
+使用 `flex-grow` 后，Flex 项目会自动扩展填充额外的空间。 `flex-shrink` 作用与此相反。当分配的空间不够怎么办？这个属性就是用来控制当可分配空间不足的情况下，每个 Flex 项目应该缩多少以便适应当前空间。需要注意的是，设置的数值越大，缩减的越多 👍
 
 <p><img src="code-tidbits/23-flex-shrink.png" alt="flex-shrink" width="500"></p>
 
@@ -556,20 +556,20 @@ So `flex-grow` will expand to fill the extra space if there are any. The opposit
 
 <a id="flex-shrink-calculation"></a>
 
-### [Day 24: flex-shrink calculation](#flex-shrink-calculation)
+### [第 24 天: flex-shrink 的计算方法](#flex-shrink-calculation)
 
-This is another optional knowledge. But if you're like me and is curious how the browser calculates flex-shrink. Join me in this rabbit hole 🐰
+这是另一个可选的知识点。如果你像我一样好奇浏览器是如何计算 flex-shrink 的，那么跟我一起来看下吧 🐰
 
-The math behind `flex-shrink` is a bit more complicated then `flex-grow`. You need to take into account of it's existing proportion and shrink it accordingly to the flex shrink amount. Hence, a few more calculation involved. Again, if this is throwing you off. Skip it. You don't need to know this to understand Flexbox. Luckily the browser takes care of it for you, how wonderful 😌
+`flex-shrink` 背后的计算逻辑比 `flex-grow` 稍微复杂一点。你需要考虑到它的现有比例，并相应地收缩到 flex-shrink 的设置值。因此，需要更多的计算。再说一遍，如果这让你感到厌烦，那就跳过本节，这不是理解 Flexbox 必需的。而且浏览器都帮我们搞定了的，嘻嘻 😌
 
 <p><img src="code-tidbits/24-flex-shrink-calculation.png" alt="flex-shrink calculation" width="500"></p>
 
 <details>
-  <summary><b>Expand to see the calculation</b></summary><br>
+  <summary><b>展开查看计算详情</b></summary><br>
 
-Indeed the calculation is a bit more complicated. But no worries, let's break it down we go through it step by step, you got this 💪
+实际上，计算是复杂一点的。不过不用担心，我们把它分解一下，一步一步来，搞明白它 💪
 
-Here's the `HTML` and `CSS` we're working with:
+下面是我们用到的 `HTML` 和 `CSS` 代码：
 
 _HTML_
 
@@ -598,9 +598,9 @@ _CSS_
 
 <br>
 
-**Step 1: Breaking down the variables**
+**第 1 步: 分解变量**
 
-This is the formula:
+这里是公式：
 
 ```code
 new width = width - (shrink space x shrink ratio)
@@ -608,23 +608,25 @@ new width = width - (shrink space x shrink ratio)
 
 Let's extract the variables required in the formula to this handy table we can fill in as we go:
 
-Variables    |     |
+变量    |     |
 ---          | --- |
-width        | *need to calculate*
-shrink space | *need to calculate*
-shrink ratio | *need to calculate*
+width        | *需要计算*
+收缩空间 | *需要计算*
+收缩率 | *需要计算*
 
 <br>
 
-**Step 2: Fill in what we know**
+**第 1 步: 填入已知信息**
 
 From the `CSS` value, we can conclude the following:
 
-- The parent element (container) has a width of `800`
-- Green child element has a width `300` and `flex-shrink` of `4`
-- Yellow child element has a width `600` and `flex-shrink` of `6`
+从 `CSS` 样式中，我们能得到如下信息：
 
-Let's update our chart with this information:
+- 父元素（容器）宽度 `800`
+- 绿色子元素宽度 `300`、`flex-shrink` 为 `4`
+- 黄色子元素宽度 `600`、`flex-shrink` 为 `6`
+
+接下来更新我们的表格数据：
 
 <i></i>     |  Green | Yellow |
 ---         | ---    | ---    |
@@ -633,20 +635,20 @@ width       | 300    | 600
 
 <br>
 
-**Step 3: Calculate "shrunk space"**
+**Step 3: 计算 "收缩空间"**
 
-This is the formula:
+这是公式：
 
 ```code
-shrunk space = total children widths - parent width
+收缩空间 = total children widths - parent width
 ```
 
-Remember what we know:
+还记得我们之前的信息吧：
 
-- The parent element (container) has a width of `800`
-- The child elements has a width of `300`, `600`
+- 父元素（容器）宽度 `800`
+- 子元素宽度分别为 `300`、`600`
 
-Great, we can use that information to calculate "total children widths":
+好的，我们用这些信息计算“total children widths”
 
 ```code
 total children widths = green + yellow
@@ -655,40 +657,40 @@ total children widths = green + yellow
 => 900
 ```
 
-Now we can calculate our "shrunk space":
+现在再来计算下“收缩空间”：
 
 ```code
-shrunk space = total children widths - parent width
-             = 900                   -  800
+收缩空间 = total children widths - parent width
+        = 900                    -  800
 
 => 100
 ```
 
-Let's update our chart and add the additional information:
+下面更新表格数据，添加额外信息：
 
 <i></i>      |  Green | Yellow | Total
 ---          | ---    | ---    | --- |
 flex shrink  | 4      | 6
 width        | 300    | 600
-shrunk space | -      | -      | **100**
+收缩空间 | -      | -      | **100**
 
 <br>
 
-**Step 4: Calculate "shrink ratio"**
+**第 4 步：计算 "收缩率"**
 
-This is the formula:
+公式：
 
 ```code
-shrink ratio = (width x flex shrink) / total shrink scaled width
+收缩率 = (width x flex shrink) / total shrink scaled width
 ```
 
-Notice this new variable, `total shrink scaled width`. So we need to calculate that first to get our shrink ratio.
+注意，我们引入一个新变量 `total shrink scaled width`，我们先来计算它。
 
 <br>
 
-**Step 4-1: Calculate "total shrink scaled width"**
+**第 4.1 步：计算 "total shrink scaled width"**
 
-This is the formula:
+公式：
 
 ```code
 total shrink scaled width = Σ(width x flex shrink)
